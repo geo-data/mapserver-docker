@@ -1,0 +1,49 @@
+# A valid mapfile used for testing
+MAP
+  NAME valid
+  STATUS ON
+  EXTENT 0 0 4000 3000
+  SIZE 400 300
+  IMAGECOLOR 200 255 255
+  CONFIG "CGI_CONTEXT_URL" "1"
+
+  WEB
+    IMAGEPATH "./"
+    IMAGEURL "/tmp/"
+  END
+  
+  LAYER
+    NAME "credits"
+    STATUS DEFAULT
+    TRANSFORM FALSE
+    TYPE POINT
+    CLASSGROUP "group1"
+    FEATURE
+      POINTS
+        200 150
+      END
+      TEXT 'Hello world.  Mapserver rocks.'
+    END
+    CLASS
+      GROUP "group1"
+      LABEL
+        TYPE BITMAP
+        STYLE
+          GEOMTRANSFORM 'labelpnt'
+          COLOR 0 0 0
+        END
+      END
+    END
+    CLASS
+      GROUP "group2"
+      LABEL
+        TYPE BITMAP
+        STYLE
+          GEOMTRANSFORM 'labelpnt'
+          COLOR 0 0 255
+        END
+      END
+    END
+  END
+
+END
