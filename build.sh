@@ -4,11 +4,14 @@
 # Build the docker image
 #
 
+# The MapServer git tag to checkout.
+git_tag=master
+
 # Exit on any non-zero status.
 trap 'exit' ERR
 set -E
 
-build_dependencies="wget
+build_dependencies="git
   build-essential
   cmake"
 
@@ -36,9 +39,9 @@ apt-get install -y \
 
 # Create the mapserver build environment.
 cd /tmp
-wget http://download.osgeo.org/mapserver/mapserver-7.0.1.tar.gz
-tar -xzf mapserver-7.0.1.tar.gz
-cd mapserver-7.0.1
+git clone https://github.com/mapserver/mapserver.git
+cd mapserver
+git checkout "${git_tag}"
 mkdir build
 cd build
 

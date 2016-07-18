@@ -33,4 +33,4 @@ bind mounts or in a derived image.  E.g. assuming you have the mapfile
 
 You will then be able to access the map from your host machine at:
 
-    http://localhost:8080/?map=/maps/my-app.map
+    http://localhost:8080/?map=/maps/my-app.map&mode=map
