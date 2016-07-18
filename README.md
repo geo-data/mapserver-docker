@@ -1,6 +1,6 @@
 # Mapserver in Docker
 
-[![](https://imagelayers.io/badge/geodata/mapserver:7.0.1.svg)](https://imagelayers.io/?images=geodata/gdal:7.0.1)
+[![](https://imagelayers.io/badge/geodata/mapserver:7.0.1.svg)](https://imagelayers.io/?images=geodata/mapserver:7.0.1)
 
 This is an Ubuntu derived image containing
 [MapServer](http://www.mapserver.org/) running under the Nginx web server as a
@@ -31,6 +31,5 @@ bind mounts or in a derived image.  E.g. assuming you have the mapfile
 
     docker run -v $(pwd):/maps:ro -p 8080:80 geodata/mapserver
 
-You will then be able to access the map from your host machine at:
-
-    http://localhost:8080/?map=/maps/my-app.map&mode=map
+You will then be able to access the map from your host machine at
+<http://localhost:8080/?map=/maps/my-app.map&mode=map>.
