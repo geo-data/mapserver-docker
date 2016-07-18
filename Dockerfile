@@ -5,7 +5,7 @@
 # comprehensive GDAL library.
 #
 
-FROM geodata/gdal:2.1.1
+FROM geodata/gdal:latest
 
 MAINTAINER Homme Zwaagstra <hrz@geodata.soton.ac.uk>
 
