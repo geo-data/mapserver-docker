@@ -8,12 +8,13 @@
 trap 'exit' ERR
 set -E
 
+build_dependencies="wget
+  build-essential
+  cmake"
+
 # Install the build dependencies.
 apt-get update -y
-apt-get install -y \
-    wget \
-    build-essential \
-    cmake
+apt-get install -y $build_dependencies
 
 # Install the runtime dependencies.
 apt-get install -y \
@@ -104,6 +105,9 @@ rm /etc/nginx/sites-enabled/default
 # Set up the run script for starting services.
 cp ./run.sh /usr/local/bin/run.sh
 chmod +x /usr/local/bin/run.sh
+
+# Remove the build dependencies.
+apt-get remove -y $build_dependencies
 
 # Clean up APT when done.
 apt-get autoremove -y
