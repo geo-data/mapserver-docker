@@ -5,7 +5,7 @@
 #
 
 # The MapServer git tag to checkout.
-git_tag=master
+git_tag=rel-7-0-1
 
 # Exit on any non-zero status.
 trap 'exit' ERR

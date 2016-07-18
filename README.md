@@ -1,6 +1,6 @@
 # Mapserver in Docker
 
-[![](https://imagelayers.io/badge/geodata/mapserver:latest.svg)](https://imagelayers.io/?images=geodata/gdal:latest)
+[![](https://imagelayers.io/badge/geodata/mapserver:7.0.1.svg)](https://imagelayers.io/?images=geodata/gdal:7.0.1)
 
 This is an Ubuntu derived image containing
 [MapServer](http://www.mapserver.org/) running under the Nginx web server as a
