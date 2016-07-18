@@ -11,6 +11,7 @@ git_tag=master
 trap 'exit' ERR
 set -E
 
+# The APT dependencies for building MapServer.
 build_dependencies="git
   build-essential
   cmake"
@@ -92,8 +93,9 @@ cmake -DCMAKE_PREFIX_PATH=/usr/local \
     ../
 
 # Build and install Mapserver.
-make
-make install
+cpu_count=$( grep processor /proc/cpuinfo | wc -l )
+make -j${cpu_count}
+make -j${cpu_count} install
 
 # Install the test mapfile.
 cd /tmp/build
